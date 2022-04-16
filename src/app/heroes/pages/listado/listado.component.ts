@@ -26,8 +26,9 @@ export class ListadoComponent implements OnInit {
       //resp[0].    
     }
       //console.log(resp) 
-      ); 
-      
+      );       
   }
+
+  
 
 }
