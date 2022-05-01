@@ -52,7 +52,7 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field fxFlex="100">
+        <mat-form-field>
             <mat-label>Foto Url</mat-label>
             <input matInput 
                 type="url" 
@@ -62,12 +62,25 @@
 
         <br>
 
-        <button mat-raised-button 
-                color="primary"
-                (click)="guardar()">
-            <mat-icon>edit</mat-icon>
-            Guardar
-        </button>
+        <div fxLayout>
+            <button mat-raised-button 
+                    color="primary"
+                    (click)="guardar()">
+                <mat-icon>edit</mat-icon>
+                Guardar
+            </button>
+
+            <span class="spacer"></span>
+
+            <button *ngIf="heroe.id" 
+                    mat-raised-button 
+                    color="warn" 
+                    (click)="borrarHeroe()">
+                <mat-icon>remove</mat-icon>
+                Borrar
+            </button>
+
+        </div>
 
     </div>
 
