@@ -17,7 +17,18 @@ export class LoginComponent   {
     //ir al Backend para confirmar que el usuario exista 
     // usar un servicio que contenga el usuario almacenado 
 
-    this.route.navigate(['./heroes']); 
+    this.authService.login()
+      .subscribe(resp => {
+        console.log(resp); 
+
+        if (resp.id) {
+          this.route.navigate(['./heroes']); 
+        }
+        
+      })
+
+
+    
 
   }
    
