@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -6,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent   {
 
-  constructor() { }
+  constructor(private route: Router, 
+            private authService: AuthService) { }
 
-  ngOnInit(): void {
+  login() {
+    //ir al Backend para confirmar que el usuario exista 
+    // usar un servicio que contenga el usuario almacenado 
+
+    this.route.navigate(['./heroes']); 
+
   }
+   
 
 }
